@@ -4,7 +4,17 @@ const app = express();
 const PORT = process.env.port || 3000;
 
 
-app.use(express.static(path.join(__dirname, 'trails/build')));
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
+app.get("*", (req, res) => {
+res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Console.log that server is up and running
 app.listen(PORT, () => {
