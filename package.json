@@ -1,0 +1,29 @@
+{
+  "name": "trails-react",
+  "version": "1.0.0",
+  "description": "Hiking Trail finding application built on react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uw-coding-boot-camp-group-7/Trails-React.git"
+  },
+  "keywords": [
+    "Trails",
+    "Hiking",
+    "Activities",
+    "Passports"
+  ],
+  "author": "Mario, Josh, Joonwoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uw-coding-boot-camp-group-7/Trails-React/issues"
+  },
+  "homepage": "https://github.com/uw-coding-boot-camp-group-7/Trails-React#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+  
+}
