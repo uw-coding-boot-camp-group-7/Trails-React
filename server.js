@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = process.env.port || 5000;
+const PORT = process.env.port || 3001;
 
 
 // Define middleware here
@@ -13,10 +13,6 @@ app.use(express.static(path.join(__dirname, 'trails/build')));
 //production mode
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'trails/build')));
-    //
-    app.get('*', (req, res) => {
-      res.sendfile(path.join(__dirname = 'trails/build/index.html'));
-    })
   }
 
 // Creating a simple get route
