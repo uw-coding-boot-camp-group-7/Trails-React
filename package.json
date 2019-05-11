@@ -4,12 +4,12 @@
   "description": "Hiking Trail finding application built on react",
   "main": "index.js",
   "scripts": {
+    "client-install": "npm install --prefix trails",
     "start": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'trails/*'\" \"npm run trails\"",
-    "client": "cd trails && npm run start",
-    "install": "cd trails && npm install",
-    "build": "cd trails && npm run build",
-    "heroku-postbuild": "npm run build"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix trails",
+    "dev": "concurrently \"npm run server\" \"npm run trails\"",
+    "heroku-postbuild": "npm run build --prefix trails"
   },
   "repository": {
     "type": "git",
