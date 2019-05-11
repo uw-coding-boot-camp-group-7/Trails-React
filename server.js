@@ -10,12 +10,19 @@ app.use(express.json());
 
 //production mode
 if(process.env.NODE_ENV === 'production') {
+
     app.use(express.static(path.join(__dirname, 'trails/build')));
+
+    app.get('/express_backend', (req, res) => {
+        res.send(({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'}));
+    });
 
     app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./trails/build/index.html"));
     });
+
 } else {
+
     app.use(express.static(path.join(__dirname, 'trails/build')));
 
     app.get('/express_backend', (req, res) => {
