@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 
 //production mode
 if(process.env.NODE_ENV === 'production') {
