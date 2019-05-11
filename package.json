@@ -4,7 +4,6 @@
   "description": "Hiking Trail finding application built on react",
   "main": "index.js",
   "scripts": {
-    "client-install": "npm install --prefix trails",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix trails",

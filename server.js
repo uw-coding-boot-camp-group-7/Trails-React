@@ -8,9 +8,21 @@ const PORT = process.env.port || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("trails/build"));
+app.use(express.static(path.join(__dirname, 'trails/build')));
+
+//production mode
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'trails/build')));
+    //
+    app.get('*', (req, res) => {
+      res.sendfile(path.join(__dirname = 'trails/build/index.html'));
+    })
   }
+
+// Creating a simple get route
+app.get('/express_backend', (req, res) => {
+    res.send(({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'}));
+});
 
 app.get("*", (req, res) => {
 res.sendFile(path.join(__dirname, "./trails/build/index.html"));
@@ -20,8 +32,3 @@ res.sendFile(path.join(__dirname, "./trails/build/index.html"));
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
-
-// Creating a simple get route
-app.get('/express_backend', (req, res) => {
-    res.send(({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'}));
-});
