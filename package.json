@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd trails && npm run build"
+    "heroku-postbuild": "cd trails && npm install && npm run build"
   },
   "repository": {
     "type": "git",
