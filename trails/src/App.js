@@ -38,6 +38,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+          {/* <p className="App-intro">{this.state.data}</p> */}
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/passport" component={Passport} />
