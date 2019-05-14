@@ -1,34 +1,48 @@
+require("dotenv").config();
 const express = require('express');
 const path = require('path');
+const routes = require ('./routes');
+const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:27017/trails";
 
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//production mode
+//This block checks to see where the app is bing deployed _
+//either production mode || local instance
+//TODO: Replace app.get with app.use(routes) -> need to add logic to api-routes
 if(process.env.NODE_ENV === 'production') {
 
     app.use(express.static(path.join(__dirname, 'trails/build')));
 
-    app.get('/express_backend', (req, res) => {
-        res.send(({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'}));
-    });
+    app.use(routes);
 
     app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./trails/build/index.html"));
+        res.sendFile(path.join(__dirname, "./trails/build/index.html"));
     });
 
 } else {
 
     app.use(express.static(path.join(__dirname, 'trails/build')));
 
-    app.get('/express_backend', (req, res) => {
-        res.send(({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'}));
+    app.use(routes);
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "./trails/build/index.html"));
     });
   }
+
+  mongoose.connect(mongoURL, {useNewUrlParser: true})
+  .then(() => {
+    console.log("🗄 ==> Successfully connected to mongoDB.");
+  })
+  .catch((err) => {
+    console.log(`Error connecting to mongoDB: ${err}`);
+  });
 
 
 
