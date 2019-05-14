@@ -1,0 +1,19 @@
+footer{
+	height: 7vh;
+	width: 100%;
+	padding: 5px;
+	background-color: #333;
+	margin-top: 3vh;
+    box-shadow: 0 0px 10px #999, 0 0px 10px #999;
+
+}
+
+.copyright {
+	font-weight: 600;
+	color: #ECEFF1;
+	text-align: center;
+	padding-top: 17px;
+	font-size: 15px;
+	width: 100%;
+	margin: auto;
+}

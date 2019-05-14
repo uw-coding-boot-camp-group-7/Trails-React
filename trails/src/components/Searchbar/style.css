@@ -1,0 +1,36 @@
+.searchbar {
+    margin: auto;
+    width: auto;
+    text-align: center;
+    position: relative;
+    top: 40vh; 
+    color: white;
+    font-size: 3vh;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid white;
+    background: inherit;
+    color: white;
+    margin-left: 10px;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+
+.prev-style {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 0px 100px;
+    box-sizing: border-box;
+    transition: .3s;
+    background: red;
+    align-items: center;
+}
