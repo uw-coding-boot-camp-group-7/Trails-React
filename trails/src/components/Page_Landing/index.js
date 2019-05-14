@@ -5,10 +5,6 @@ import TrailCard from "../TrailCard";
 import Footer from "../Footer";
 import examples from "../../default.json";
 
-const style = {
-  
-}
-
 class Landing extends Component {
 
   state = {
