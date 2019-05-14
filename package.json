@@ -9,6 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix trails",
     "dev": "concurrently \"npm run server\" \"npm run trails\"",
+    "seed": "node scripts/seedDB.js",
     "heroku-postbuild": "cd trails && npm install && npm run build"
   },
   "repository": {

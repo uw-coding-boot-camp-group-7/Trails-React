@@ -5,11 +5,10 @@ const routes = require ('./routes');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:27017/trails";
-
+const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost/trails";
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true, useCreateIndex: true }));
 app.use(express.json());
 
 //This block checks to see where the app is bing deployed _
@@ -36,15 +35,13 @@ if(process.env.NODE_ENV === 'production') {
     });
   }
 
-  mongoose.connect(mongoURL, {useNewUrlParser: true})
-  .then(() => {
-    console.log("🗄 ==> Successfully connected to mongoDB.");
-  })
-  .catch((err) => {
-    console.log(`Error connecting to mongoDB: ${err}`);
-  });
-
-
+mongoose.connect(mongoURL, {useNewUrlParser: true}, )
+.then(() => {
+  console.log("🗄 ==> Successfully connected to mongoDB.");
+})
+.catch((err) => {
+  console.log(`Error connecting to mongoDB: ${err}`);
+});
 
 // Console.log that server is up and running
 app.listen(PORT, () => {
