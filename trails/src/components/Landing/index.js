@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Parallax from "../Parallax";
 import Slide from "../Slide";
 import Wrapper from "../Wrapper";
 import TrailCard from "../TrailCard";
@@ -16,7 +15,6 @@ class Landing extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Parallax /> */}
         <Slide />
         <Wrapper>
           {this.state.examples.map(examples => (
