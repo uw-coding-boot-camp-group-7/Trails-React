@@ -12,7 +12,7 @@ const styles = {
     }
 }
 
-class Slide extends Component {
+class SlideHeader extends Component {
 
     // state = {
     //     example,
@@ -66,4 +66,4 @@ class Slide extends Component {
     }
 }
 
-export default Slide;
+export default SlideHeader;

@@ -4,7 +4,7 @@ import Parallax from "../Parallax";
 import Wrapper from "../Wrapper";
 import Footer from "../Footer";
 
-class LoginSignup extends Component {
+class Login extends Component {
 
   render() {
     return (
@@ -44,4 +44,4 @@ class LoginSignup extends Component {
   }
 }
 
-export default LoginSignup;
+export default Login;

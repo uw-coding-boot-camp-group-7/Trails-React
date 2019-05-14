@@ -5,11 +5,12 @@ function Navbar() {
     return (
         <nav className="navbar navbar-default navbar-fixed-top">
             <ul>
-                <li><a href="not/a/url">Passport</a></li>  
+                <li><a href="/">Home</a></li>  
             </ul>        
             <ul>
-                <li><a id="login" href="not/a/url">Log in</a></li>  
-                <li><a id="signup" href="not/a/url" style={{color: "#f7a434"}}>Sign Up</a></li>  
+                <li><a id="login" href="/info">Trail info</a></li>  
+                <li><a id="login" href="/passport">Passport</a></li>  
+                <li><a id="signup" href="/login" style={{color: "#f7a434"}}>Log in</a></li>  
             </ul>
         </nav>
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Slide from "../Slide";
+import SlideHeader from "../SlideHeader";
 import Wrapper from "../Wrapper";
 import TrailCard from "../TrailCard";
 import Footer from "../Footer";
@@ -15,7 +15,7 @@ class Landing extends Component {
   render() {
     return (
       <React.Fragment>
-        <Slide />
+        <SlideHeader />
         <Wrapper>
           {this.state.examples.map(examples => (
             <TrailCard
