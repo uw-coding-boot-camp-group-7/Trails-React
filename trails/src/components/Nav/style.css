@@ -19,14 +19,16 @@ nav ul {
 nav ul li a {
     line-height: 80px;
     color: #151515;
-    padding: 12px 30px;
+    margin: 12px 30px;
+    padding: 8px 5px;
     text-decoration: none;
     text-transform: uppercase;
     transition: .3s;
 }
 
 nav ul li a:hover {
-    background: #f7a434;
+    /* background: #f7a434; */
+    border-bottom: 2px solid white;
     color: white;
     text-decoration:none;
 }
