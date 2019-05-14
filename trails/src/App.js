@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import logo from './logo.svg';
-import LoginSignup from './components/LoginSignup';
-import Landing from './components/Landing';
+import Login from './components/Page_Login';
+import Landing from './components/Page_Landing';
 import API from './utils/API'
 
 class App extends Component {
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-          <Route exact path="/login" component={LoginSignup} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Landing} />
       </Router>
     );
