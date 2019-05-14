@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Mount Fuji",
+      "location": "Tokyo, Japan",
+      "image": "fuji.png"
+    },
+    {
+      "id": 2,
+      "name": "Jotunheimen",
+      "location": "Jotunheimen Nasjonal Park, Norway",
+      "image": "jotunheimen.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Mount Kilimanjaro",
+      "location": "Moshi, Tanzania",
+      "image": "kilamanjaro.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Kirkjufell",
+      "location": "Grundarfjörður, Iceland",
+      "image": "kirjufell.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mount Logan",
+      "location": "Yukon, Canada",
+      "image": "mt-logan.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Zhang Jia Jie",
+      "location": "Zhangjiajie, China",
+      "image": "zhangjiajie.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Mount Fuji",
+      "location": "Tokyo, Japan",
+      "image": "fuji.png"
+    },
+    {
+      "id": 8,
+      "name": "Jotunheimen",
+      "location": "Jotunheimen Nasjonal Park, Norway",
+      "image": "jotunheimen.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Mount Kilimanjaro",
+      "location": "Moshi, Tanzania",
+      "image": "kilamanjaro.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Kirkjufell",
+      "location": "Grundarfjörður, Iceland",
+      "image": "kirjufell.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Mount Logan",
+      "location": "Yukon, Canada",
+      "image": "mt-logan.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Zhang Jia Jie",
+      "location": "Zhangjiajie, China",
+      "image": "zhangjiajie.jpg"
+    }
+  ]
+  

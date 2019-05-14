@@ -1,0 +1,43 @@
+form.signup, form.login {
+  /* margin-top: 10px; */
+}
+
+.console-back {
+  background: #2c2f34;
+
+}
+
+/* .console {
+  position: absolute;
+  top: 40vh;
+  left: 84vh; 
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5vh;
+  width: auto;
+  color: white;
+  background: #2c2f34;
+} */
+
+.console {
+  position: relative;
+  bottom: 30vh;
+  left: 76vh;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 3vh;
+  padding-bottom: 8vh;
+  width: 50vh;
+  color: white;
+
+}
+
+.login-btn {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  float: left;
+}

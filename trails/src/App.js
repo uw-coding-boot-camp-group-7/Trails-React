@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LoginSignup from './components/LoginSignup';
 import logo from './logo.svg';
-import './App.css';
+import Landing from './components/Page_Landing';
+import Login from './components/Page_Login';
+import Passport from './components/Page_Passport';
+import TrailsInfo from './components/Page_TrailsInfo';
 import API from './utils/API'
 
 
@@ -36,15 +38,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to Trails</h1>
-
-            <p className="App-intro">{this.state.data}</p>
-          </header>
-          <Route exact path="/login" component={LoginSignup} />
-        </div>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/passport" component={Passport} />
+          <Route exact path="/info" component={TrailsInfo} />
       </Router>
     );
   }
