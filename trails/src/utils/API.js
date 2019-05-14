@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets connection to back
   getUser: function() {
-    return axios.get("/");
+    return axios.get("/api/users");
   }
 //   // Gets the book with the given id
 //   getBook: function(id) {

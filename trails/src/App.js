@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import API from './utils/API'
 
+
 class App extends Component {
 
   state = {
@@ -12,21 +13,25 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.callBackendAPI()
-    .then(res => this.setState({ data: res.express }))
-    .catch(err => console.log(err));
+    this.callBackendAPI();
   };
 
-  callBackendAPI = async () => {
-    
-    const response = await API.getUser();
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message)
-    }
-    return body
+  callBackendAPI = () => {
+    API.getUser()
+      .then(res =>
+        this.setState({ data: res.data })
+      );
   };
+
+  // callBackendAPI = async () => {
+  //   const response = await API.getUser();
+  //   console.log(response);
+  //   const body = await response.json();
+  //   if (response.status !== 200) {
+  //     throw Error(body.message)
+  //   }
+  //   return body
+  // };
 
   render() {
     return (
