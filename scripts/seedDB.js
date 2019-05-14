@@ -26,8 +26,7 @@ const userSeed = [
     password: "teamCompass",
     email: "joonwoo@email.com",
     date: new Date(Date.now())
-  },  
- 
+  }
 ];
 
 db.User
