@@ -57,6 +57,6 @@
 
 .trail-card:hover .overlay {
   opacity: 0.85;
-  box-shadow: 0 6px 12px #999, 0 6px 12px #999;
+  box-shadow: 0 6px 12px #999, 0 6px 12px #999, inset 0 0 100px #333;
   /* vignette style: , inset 0 0 100px #333 */
 }
