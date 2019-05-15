@@ -1,19 +1,62 @@
 .trail-card {
-  overflow: hidden;
-  width: auto;
-  height: auto;
-  margin: 10px;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-
-  
+  margin: 5px 0;
+  width: 300px;
 }
 
-.trail-card:hover {
-  overflow: hidden;
-  width: auto;
-  height: auto;
-  margin: 10px;
-  box-shadow: 0 6px 12px #999, 0 6px 12px #999;
-  transition: .2s;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
+.trail-img {
+  width: 100%;
+  max-height: 200px;
+  margin: auto;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  transition: 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background: #01850b;
+}
+
+.content {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.sub-content {
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  margin: auto;
+  width: auto;
+}
+
+.trail-img:hover {
+  width: 300px;
+  margin: auto;
+  box-shadow: none;
+  transition: .2s;
+}
+
+.trail-card:hover .overlay {
+  opacity: 0.85;
+  box-shadow: 0 6px 12px #999, 0 6px 12px #999;
+  /* vignette style: , inset 0 0 100px #333 */
 }

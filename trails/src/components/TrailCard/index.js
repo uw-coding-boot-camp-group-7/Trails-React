@@ -3,18 +3,19 @@ import "./style.css";
 
 const styles = {
   pic: {
+    width: 300,
     height: "auto",
-    width: 200,
   }
 }
 
 function TrailCard(props) {
   return (
-    <div className="trail-card" >
-      <div className="img-container">
-        <img style={styles.pic} alt={props.name} src={require("../../images/" + props.image)} />
+      <div className="trail-card center">
+        <img className="trail-img"  alt={props.name} src={require("../../images/" + props.image)} />
+        <div className="overlay center">
+        <div className="content">{props.name}<p className="sub-content">{props.location}</p></div>
+        </div>
       </div>
-    </div>
   );
 }
 
