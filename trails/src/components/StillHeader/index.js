@@ -17,7 +17,7 @@ class StillHeader extends Component {
     render() {
         return (
             <div style={styles.container}>
-                <div className="slide" id="slide">
+                <div className="still">
                     <Nav />
                 </div>
             </div>
