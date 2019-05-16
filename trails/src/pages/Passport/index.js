@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Parallax from "../Parallax";
-import Wrapper from "../Wrapper";
-import Footer from "../Footer";
+import Parallax from "../../components/Parallax";
+import Wrapper from "../../components/Wrapper";
+import Footer from "../../components/Footer";
 
 class Passport extends Component {
 

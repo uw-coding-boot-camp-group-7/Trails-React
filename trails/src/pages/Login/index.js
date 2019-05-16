@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import Parallax from "../../components/Parallax";
+import { LoginForm, SignupForm } from '../../components/Forms';
 import "./style.css";
-import Parallax from "../Parallax";
-import Forms, { LoginForm, SignupForm } from '../Forms';
 
 class Login extends Component {
 
