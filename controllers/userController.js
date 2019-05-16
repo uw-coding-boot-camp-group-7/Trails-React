@@ -4,11 +4,11 @@ const db = require('../models');
 module.exports = {
     findAll: function(req, res) {
       res.send("You are connected to the backend!");
-      // db.User
-      //   .find(req.query)
-      //   .sort({ date: -1 })
-      //   .then(dbModel => res.json(dbModel))
-      //   .catch(err => res.status(422).json(err));
+    //   db.User
+    //     .find(req.query)
+    //     .sort({ date: -1 })
+    //     .then(dbModel => res.json(dbModel))
+    //     .catch(err => res.status(422).json(err));
     },
     //TODO: complete logic to return user queried by ID -> Joonwoo
     findById: function(req, res) {
@@ -35,5 +35,8 @@ module.exports = {
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
+    },
+    findByUsername: function(req, res) {
+      res.send('Finding User')
     }
   };
