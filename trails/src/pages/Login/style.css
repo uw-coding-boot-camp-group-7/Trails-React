@@ -5,7 +5,7 @@
 
 .console {
   position: relative;
-  bottom: 30vh;
+  bottom: 40vh;
   left: 76vh;
   border: 2px solid white;
   border-radius: 5px;
@@ -29,4 +29,9 @@
 .custom-btn:hover {
   color: #2c2f34;
   background: white;
+}
+
+a {
+  font-style: underline;
+  color: #01850b;
 }
