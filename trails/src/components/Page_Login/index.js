@@ -40,7 +40,7 @@ class Login extends Component {
                 <input  
                 type="username" 
                 className="form-control" 
-                id="email-input" 
+                id="username-input" 
                 placeholder="Username" 
                 />
               </div>
@@ -64,7 +64,7 @@ class Login extends Component {
                 <input 
                 type="password" 
                 className="form-control" 
-                id="password-input" 
+                id="confirm-input" 
                 placeholder="Confirm your password" 
                 />
               </div>
