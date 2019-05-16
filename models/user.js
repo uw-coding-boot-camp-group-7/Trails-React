@@ -12,7 +12,7 @@ let UserSchema = new Schema({
   username: {
     type: String,
     trim: true,
-    required: "Username is Required"
+    required: [true, "Username is Required"]
   },
   // `password` must be of type String
   // `password` will trim leading and trailing whitespace before it's saved
@@ -21,7 +21,7 @@ let UserSchema = new Schema({
   password: {
     type: String,
     trim: true,
-    required: "Password is Required",
+    required: [true, "Password is Required"],
     validate: [
       function(input) {
         return input.length >= 6;

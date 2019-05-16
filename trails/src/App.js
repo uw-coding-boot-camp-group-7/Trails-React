@@ -25,16 +25,6 @@ class App extends Component {
       );
   };
 
-  // callBackendAPI = async () => {
-  //   const response = await API.getUser();
-  //   console.log(response);
-  //   const body = await response.json();
-  //   if (response.status !== 200) {
-  //     throw Error(body.message)
-  //   }
-  //   return body
-  // };
-
   render() {
     return (
       <Router>
