@@ -30,3 +30,8 @@
   color: #2c2f34;
   background: white;
 }
+
+a {
+  font-style: underline;
+  color: #01850b;
+}

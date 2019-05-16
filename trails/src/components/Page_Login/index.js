@@ -1,11 +1,28 @@
 import React, { Component } from "react";
 import "./style.css";
 import Parallax from "../Parallax";
-import Wrapper from "../Wrapper";
-import Footer from "../Footer";
+import Forms, { LoginForm, SignupForm } from '../Forms';
 
 class Login extends Component {
 
+  state = {
+    currentForm: 'Login'
+  };
+
+  handleFormChange = form => {
+    this.setState({ currentForm: form });
+  };
+
+  renderForm = () => {
+    switch (this.state.currentForm) {
+      case "Login":
+        return <LoginForm handleFormChange={this.handleFormChange}/>;
+      case "Signup":
+        return <SignupForm handleFormChange={this.handleFormChange} />;
+      default:
+        return <LoginForm handleFormChange={this.handleFormChange} />;
+    }
+  }
 
   render() {
     return (
@@ -14,63 +31,8 @@ class Login extends Component {
         <div className="console-back">
           <div className="console">
 
-            <form>
-              <div className="form-group">
-                <input  
-                type="email" 
-                className="form-control" 
-                id="email-input" 
-                placeholder="Email" 
-                />
-              </div>
-              <div className="form-group">
-                <input 
-                type="password" 
-                className="form-control" 
-                id="password-input" 
-                placeholder="Password" 
-                />
-              </div>
-              <button type="submit" className="btn btn-default custom-btn" id="login">Log in</button>
-            </form>
-            <p style={{float:"right"}}>Or create an account <a href="/login">here</a></p>
+          {this.renderForm()}
 
-            <form>
-              <div className="form-group">
-                <input  
-                type="username" 
-                className="form-control" 
-                id="username-input" 
-                placeholder="Username" 
-                />
-              </div>
-              <div className="form-group">
-                <input  
-                type="email" 
-                className="form-control" 
-                id="email-input" 
-                placeholder="Email" 
-                />
-              </div>
-              <div className="form-group">
-                <input 
-                type="password" 
-                className="form-control" 
-                id="password-input" 
-                placeholder="Password" 
-                />
-              </div>
-              <div className="form-group">
-                <input 
-                type="password" 
-                className="form-control" 
-                id="confirm-input" 
-                placeholder="Confirm your password" 
-                />
-              </div>
-              <button type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
-            </form>
-            
           </div>
         </div>
         {/* <Footer /> */}
