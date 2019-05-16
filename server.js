@@ -13,7 +13,6 @@ app.use(express.json());
 
 //This block checks to see where the app is bing deployed _
 //either production mode || local instance
-//TODO: Replace app.get with app.use(routes) -> need to add logic to api-routes
 if(process.env.NODE_ENV === 'production') {
 
     app.use(express.static(path.join(__dirname, 'trails/build')));
@@ -33,7 +32,7 @@ if(process.env.NODE_ENV === 'production') {
     app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "./trails/build/index.html"));
     });
-  }
+}
 
 mongoose.connect(mongoURL, {useNewUrlParser: true}, )
 .then(() => {
