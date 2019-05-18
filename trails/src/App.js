@@ -6,6 +6,7 @@ import Passport from './pages/Passport';
 import TrailsInfo from './pages/TrailsInfo';
 import API from './utils/API'
 
+
 class App extends Component {
 
   state = {
@@ -13,25 +14,20 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.callBackendAPI()
-    .then(res => this.setState({ data: res.express }))
-    .catch(err => console.log(err));
+    this.callBackendAPI();
   };
 
-  callBackendAPI = async () => {
-    
-    const response = await API.getUser();
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message)
-    }
-    return body
+  callBackendAPI = () => {
+    API.getUser()
+      .then(res =>
+        this.setState({ data: res.data })
+      );
   };
 
   render() {
     return (
       <Router>
+          {/* <p className="App-intro">{this.state.data}</p> */}
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/passport" component={Passport} />
