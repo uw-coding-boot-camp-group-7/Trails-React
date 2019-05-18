@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Landing from './components/Page_Landing';
-import Login from './components/Page_Login';
-import Passport from './components/Page_Passport';
-import TrailsInfo from './components/Page_TrailsInfo';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Passport from './pages/Passport';
+import TrailsInfo from './pages/TrailsInfo';
 import API from './utils/API'
 
 
