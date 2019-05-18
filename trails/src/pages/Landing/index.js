@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import SlideHeader from "../SlideHeader";
-import Wrapper from "../Wrapper";
-import TrailCard from "../TrailCard";
-import Footer from "../Footer";
+import SlideHeader from "../../components/SlideHeader";
+import Wrapper from "../../components/Wrapper";
+import TrailCard from "../../components/TrailCard";
+import Footer from "../../components/Footer";
 import examples from "../../default.json";
 
 class Landing extends Component {

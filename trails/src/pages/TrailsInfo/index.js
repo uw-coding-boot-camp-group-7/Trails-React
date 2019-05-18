@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import StillHeader from "../StillHeader";
-import Wrapper from "../Wrapper";
-import Footer from "../Footer";
+import StillHeader from "../../components/StillHeader";
+import Wrapper from "../../components/Wrapper";
+import Footer from "../../components/Footer";
 
 
 class TrailsInfo extends Component {
