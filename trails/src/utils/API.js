@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   // Gets connection to back
-  getUser: function() {
+  getUsers: function() {
     return axios.get("/api/users");
   },
 //   // Gets the book with the given id
