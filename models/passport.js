@@ -1,10 +1,14 @@
-var mongoose = require("mongoose");
+let mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
-var UserSchema = new Schema({
+let PassportSchema = new Schema({
     
-})
+});
+
+let Passport = mongoose.model("Passport", PassportSchema);
+
+module.exports = Passport;

@@ -8,9 +8,8 @@ router.route("/")
 
 
 // Matches with "/api/users/:id"
-//TODO: Update to reflect actual routes
-// router
-//     .route("/:id")
+// TODO: Update to reflect actual routes
+// router.route("/:id")
 //     .get(userController.findByID)
 //     .put(userController.update)
 //     .delete(userController.remove);

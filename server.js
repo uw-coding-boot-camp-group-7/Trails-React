@@ -43,6 +43,9 @@ mongoose.connect(mongoURL, {useNewUrlParser: true}, )
 });
 
 // Console.log that server is up and running
-app.listen(PORT, () => {
-    console.log(`🌎 ==> API server now on port ${PORT}!`);
-  });
+app.listen(PORT, function() {
+  console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+        PORT, 
+        PORT);
+});
