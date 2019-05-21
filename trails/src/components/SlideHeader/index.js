@@ -12,18 +12,14 @@ const styles = {
     }
 }
 
-class SlideHeader extends Component {
-
-    render() {
-        return (
-            <div style={styles.container}>
-                <div className="slide" id="slide">
-                    <Nav />
-                    <Searchbar />
-                </div>
+function SlideHeader(props) {
+    return (
+        <div style={styles.container}>
+            <div className="slide" id="slide">
+                {props.children}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default SlideHeader;

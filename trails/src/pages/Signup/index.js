@@ -24,9 +24,9 @@ class Signup extends Component {
   handleFormSubmit = event => {
   // When the form is submitted, prevent its default behavior, get recipes update the recipes state
   event.preventDefault();
-  API.getRecipes(this.state.)
-      .then(res => this.setState({ recipes: res.data }))
-      .catch(err => console.log(err));
+  // API.getRecipes(this.state.)
+  //     .then(res => this.setState({ recipes: res.data }))
+  //     .catch(err => console.log(err));
   };
 
   render() {
@@ -68,7 +68,7 @@ class Signup extends Component {
                     />
                 </div>
                 <button type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
-                <p style={{float:"right"}}>Back to <a style={styles.hyperlink} onClick={() => props.handleFormChange("Login")}>login</a></p>
+                <p style={{float:"right"}}>Back to <a href="/login">login</a></p>
             </form>
           </Wrapper>
           <Footer />

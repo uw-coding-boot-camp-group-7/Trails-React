@@ -1,10 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function Searchbar() {
+function Searchbar(props) {
     return (
         <div className="searchbar">
-            <div className="search">Search:  <input id="search" type="text" className="search-input"  autofocus="autofocus"></input> </div>
+            <div className="search">Search:  
+                <input {...props} id="search" type="text" className="search-input"  autofocus="autofocus"></input> 
+            </div>
             
         </div>
     );

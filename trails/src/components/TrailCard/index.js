@@ -11,7 +11,7 @@ const styles = {
 function TrailCard(props) {
   return (
       <div className="trail-card center">
-        <img className="trail-img"  alt={props.name} src={require("../../images/" + props.image)} />
+        <img className="trail-img"  alt={props.name} src={props.image} />
         <div className="overlay center">
         <div className="content">{props.name}<p className="sub-content">{props.location}</p></div>
         </div>
