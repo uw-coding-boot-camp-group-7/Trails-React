@@ -24,3 +24,13 @@ body {
 	margin: auto;
 	overflow: hidden;
 }
+
+.title {
+	position: absolute;
+	font-size: 7vh;
+	color: white;
+	margin-top: 42vh;
+	left: 50vh;
+	width: 50%;
+	border-bottom: 2px solid white;
+}

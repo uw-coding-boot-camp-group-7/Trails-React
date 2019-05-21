@@ -9,7 +9,8 @@ class Login extends Component {
   state = {
     user: [],
     email: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
   handleInputChange = event => {
@@ -42,7 +43,7 @@ class Login extends Component {
                 type="email" 
                 className="form-control" 
                 placeholder="Email"
-                value={this.state.recipeSearch}
+                value={this.state.email}
                 onChange = {this.handleInputChange} 
                 />
                 <Input 
@@ -50,7 +51,7 @@ class Login extends Component {
                 type="password" 
                 className="form-control" 
                 placeholder="Password" 
-                value={this.state.recipeSearch}
+                value={this.state.password}
                 onChange = {this.handleInputChange} 
                 />
                 <FormBtn 
@@ -61,7 +62,7 @@ class Login extends Component {
                   >Log in
                 </FormBtn>
                 {/* Redirect to signup */}
-                {/* <p style={{float:"right"}}>Or create an account <a style={styles.hyperlink} onClick={() => handleFormChange("Signup")}>here</a></p> */}
+                <p style={{float:"right"}}>Or create an account <a href="/signup">here</a></p>
               </form>
 
             </div>
