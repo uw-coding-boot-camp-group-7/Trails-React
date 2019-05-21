@@ -10,14 +10,10 @@ class Landing extends Component {
 
   state = {
     search: "",
-    // longitude: "",
-    // lattitude: "",
-    trails: [],
-    lattitude:"47.6062",
-    longitude:"-122.3321"
-
+    longitude: -122.3321,
+    lattitude: 47.6062,
+    trails: []
   }
-  // https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200440393-24756b1a160e4136ab4606caf960655b
 
   componentDidMount() {
     this.loadTrails();
@@ -28,17 +24,23 @@ class Landing extends Component {
     this.setState({
       [name]: value
     });
-  };
+  }
 
   handleSearchSubmit = event => {
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.search}&bounds=34.172684,-118.604794|34.236144,-118.500938&key=AIzaSyADwTKftdeqrk5jC1DSCZJLk9nkGi_aJk0`)
-    .then(res => res.json())
-    .then(json => {
-      this.setState({
-        longitude: json[0].geometry.location.lng,
-        lattitude: json[0].geometry.location.lat,
-      });
-    }).then(this.loadTrails());
+    if(event.key == 'Enter'){
+      if (this.state.search !== "") {
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.search}&bounds=34.172684,-118.604794|34.236144,-118.500938&key=AIzaSyADwTKftdeqrk5jC1DSCZJLk9nkGi_aJk0`)
+        .then(res => res.json())
+        .then(json => {
+          this.setState({
+            longitude: json.results[0].geometry.location.lng,
+            lattitude: json.results[0].geometry.location.lat,
+            search: ""
+          });
+          this.loadTrails();
+        });
+      }
+    }
   }
 
   loadTrails = () => {
@@ -46,7 +48,7 @@ class Landing extends Component {
     .then(res => res.json())
     .then(json => {
       this.setState({
-          trails: json.trails,
+        trails: json.trails,
       });
     });
   };
@@ -56,7 +58,12 @@ class Landing extends Component {
       <React.Fragment>
         <SlideHeader>
           <Nav />
-          <Searchbar />
+          <Searchbar 
+            name="search" 
+            value={this.state.search}
+            onChange = {this.handleInputChange}
+            onKeyPress={this.handleSearchSubmit} 
+          />
         </SlideHeader>
         <Wrapper>
           {this.state.trails.map(trails => (
