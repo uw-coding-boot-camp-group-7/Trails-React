@@ -7,10 +7,20 @@ import Footer from "../../components/Footer";
 class Signup extends Component {
 
   state = {
-    userName: "",
+    users: [],
+    username: "",
     email: "",
-    password: ""
+    password: "",
+    password2: ""
   }
+
+  loadUsers = () => {
+    API.getUsers()
+      .then(res =>
+        this.setState({ users: res.data, username: "", email: "", password: "" })
+      )
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
       // Destructure the name and value properties off of event.target
@@ -22,11 +32,16 @@ class Signup extends Component {
   };
 
   handleFormSubmit = event => {
-  // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-  event.preventDefault();
-  API.getRecipes(this.state.)
-      .then(res => this.setState({ recipes: res.data }))
-      .catch(err => console.log(err));
+    console.log('in form submit')
+    event.preventDefault();
+    if (this.state.username && this.state.password) {
+      console.log('in handleFormSubmit');
+      API.saveUser({
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email
+      }).catch(err => console.log(err));
+    }
   };
 
   render() {
@@ -37,6 +52,9 @@ class Signup extends Component {
             <form id="signup-frm">
                 <div className="form-group">
                     <input  
+                    value= {this.state.username}
+                    onChange= {this.handleInputChange}
+                    name="username"
                     type="username" 
                     className="form-control" 
                     id="username-input" 
@@ -45,6 +63,9 @@ class Signup extends Component {
                 </div>
                 <div className="form-group">
                     <input  
+                    value= {this.state.email}
+                    onChange= {this.handleInputChange}
+                    name="email"
                     type="email" 
                     className="form-control" 
                     id="email-input" 
@@ -53,6 +74,9 @@ class Signup extends Component {
                 </div>
                 <div className="form-group">
                     <input 
+                    value= {this.state.password}
+                    onChange= {this.handleInputChange}
+                    name="password"
                     type="password" 
                     className="form-control" 
                     id="password-input" 
@@ -61,14 +85,16 @@ class Signup extends Component {
                 </div>
                 <div className="form-group">
                     <input 
+                    value= {this.state.password2}
+                    onChange= {this.handleInputChange}
+                    name="password2"
                     type="password" 
                     className="form-control" 
                     id="confirm-input" 
                     placeholder="Confirm your password" 
                     />
                 </div>
-                <button type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
-                <p style={{float:"right"}}>Back to <a style={styles.hyperlink} onClick={() => props.handleFormChange("Login")}>login</a></p>
+                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
             </form>
           </Wrapper>
           <Footer />

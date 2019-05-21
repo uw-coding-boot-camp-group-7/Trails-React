@@ -10,21 +10,21 @@ import API from './utils/API'
 
 class App extends Component {
 
-  state = {
-    data: [],
-    userSearch: ""
-  };
+  // state = {
+  //   data: [],
+  //   userSearch: ""
+  // };
 
-  componentDidMount() {
-    this.callBackendAPI();
-  };
+  // componentDidMount() {
+  //   this.callBackendAPI();
+  // };
 
-  callBackendAPI = () => {
+  // callBackendAPI = () => {
 
-    API.getUser(this.state.userSearch)
-      .then(res => this.setState({ data: res.data }))
-      .catch(err => console.log(err));
-  };
+  //   API.getUser(this.state.userSearch)
+  //     .then(res => this.setState({ data: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     return (
@@ -34,7 +34,7 @@ class App extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/passport" component={Passport} />
           <Route exact path="/info" component={TrailsInfo} />
-          <p className="App-intro">{this.state.data}</p>
+          {/* <p className="App-intro">{this.state.data}</p> */}
       </Router>
     );
   }
