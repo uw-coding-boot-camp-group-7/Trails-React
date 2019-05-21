@@ -24,7 +24,7 @@ class Signup extends Component {
   handleFormSubmit = event => {
   // When the form is submitted, prevent its default behavior, get recipes update the recipes state
   event.preventDefault();
-  API.getRecipes(this.state.recipeSearch)
+  API.getRecipes(this.state.)
       .then(res => this.setState({ recipes: res.data }))
       .catch(err => console.log(err));
   };
@@ -34,7 +34,42 @@ class Signup extends Component {
         <React.Fragment>
           <Parallax />
           <Wrapper>
-            <h1>Sign-up Page</h1>
+            <form id="signup-frm">
+                <div className="form-group">
+                    <input  
+                    type="username" 
+                    className="form-control" 
+                    id="username-input" 
+                    placeholder="Username" 
+                    />
+                </div>
+                <div className="form-group">
+                    <input  
+                    type="email" 
+                    className="form-control" 
+                    id="email-input" 
+                    placeholder="Email" 
+                    />
+                </div>
+                <div className="form-group">
+                    <input 
+                    type="password" 
+                    className="form-control" 
+                    id="password-input" 
+                    placeholder="Password" 
+                    />
+                </div>
+                <div className="form-group">
+                    <input 
+                    type="password" 
+                    className="form-control" 
+                    id="confirm-input" 
+                    placeholder="Confirm your password" 
+                    />
+                </div>
+                <button type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
+                <p style={{float:"right"}}>Back to <a style={styles.hyperlink} onClick={() => props.handleFormChange("Login")}>login</a></p>
+            </form>
           </Wrapper>
           <Footer />
         </React.Fragment>
