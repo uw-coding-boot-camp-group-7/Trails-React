@@ -53,11 +53,16 @@ class Landing extends Component {
     });
   };
 
+
   render() {
     return (
       <React.Fragment>
         <SlideHeader>
-          <Nav />
+          <Nav>
+            <li><a href="/passport">Passport</a></li>  
+            <li><a href="/login">Log in</a></li>  
+            <li><a href="/signup">Sign up</a></li>  
+          </Nav>
           <Searchbar 
             name="search" 
             value={this.state.search}
