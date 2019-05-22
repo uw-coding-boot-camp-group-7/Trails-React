@@ -5,7 +5,7 @@ const routes = require ('./routes');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const mongoURL = process.env.PROD_MONGODB_URI || "mongodb://localhost/trails";
+const PROD_MONGODB_URI = process.env.PROD_MONGODB_URI ||"mongodb://localhost/trails";
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true, useCreateIndex: true }));
@@ -34,7 +34,7 @@ if(process.env.NODE_ENV === 'production') {
     });
 }
 
-mongoose.connect(mongoURL, {useNewUrlParser: true} )
+mongoose.connect(PROD_MONGODB_URI, {useNewUrlParser: true} )
 .then(() => {
   console.log("🗄 ==> Successfully connected to mongoDB.");
 })
