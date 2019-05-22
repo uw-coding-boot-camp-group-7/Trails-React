@@ -5,7 +5,7 @@ const routes = require ('./routes');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const uristring = process.env.MONGOLAB_URI ||"mongodb://localhost/trails";
+const uristring = process.env.PROD_MONGODB ||"mongodb://localhost/trails";
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true, useCreateIndex: true }));
