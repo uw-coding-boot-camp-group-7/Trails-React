@@ -25,22 +25,15 @@ module.exports = {
     },
     //Adds a new hike to the user's passport array
     update: function(req, res) {
-
-      let new_Hike = {
-        //whatever the data fields I need to add
-
-      }
-
       db.User
-        .findOneAndUpdate({ _id: req.params.id }, {"$addToSet" : { "userPassport" : new_Hike} }) //be sure to update the req.body to the new obj -> new_Hike
+        .findOneAndUpdate({ _id: req.params.id }, {"$addToSet" : { "userPassport" : req.params.hike_id} }) //be sure to update the req.body to the new obj -> new_Hike
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     //Delets a hike from the user's passport array
     remove: function(req, res) { //remove hike, be sure to update this to handle that query
       db.User
-        .findById({ _id: req.params.id })
-        .then(dbModel => dbModel.remove())
+        .findOneAndUpdate({ _id: req.params.id }, {"$pull" : {"userPassport" : req.params.hike_id }}) 
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
