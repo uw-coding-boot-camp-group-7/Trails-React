@@ -41,7 +41,6 @@ let userSchema = new Schema({
     type: Date,
     default: Date.now
   },
-
   userPassport: [
     {
       type: String,
