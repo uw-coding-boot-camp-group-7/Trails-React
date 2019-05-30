@@ -1,32 +1,32 @@
 .console-back {
-  background: #2c2f34;
-
-}
-
-.console {
-  position: relative;
-  bottom: 40vh;
-  left: 76vh;
-  border: 2px solid white;
-  border-radius: 5px;
-  text-align: center;
-  padding: 3vh;
-  padding-bottom: 8vh;
-  width: 50vh;
-  color: white;
-
-}
-
-.custom-btn {
-  border: 2px solid white;
-  border-radius: 5px;
-  padding: 5px;
-  color: white;
-  float: left;
-  transition: 0.5s ease;
-}
-
-.custom-btn:hover {
-  color: #2c2f34;
-  background: white;
-}
+    background: #2c2f34;
+  
+  }
+  
+  .console {
+    position: relative;
+    bottom: 40vh;
+    left: 76vh;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3vh;
+    padding-bottom: 8vh;
+    width: 50vh;
+    color: white;
+  
+  }
+  
+  .custom-btn {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    float: left;
+    transition: 0.5s ease;
+  }
+  
+  .custom-btn:hover {
+    color: #2c2f34;
+    background: white;
+  }
