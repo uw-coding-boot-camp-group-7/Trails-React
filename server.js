@@ -6,7 +6,8 @@ const routes = require ('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const uristring = process.env.MONGODB_URI ||"mongodb://localhost/trails";
-process.env.IP_STACK_KEY
+
+let apiKey = process.env.IP_STACK_KEY; //declared but not used
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true, useCreateIndex: true }));
