@@ -53,6 +53,9 @@ class Landing extends Component {
     });
   };
 
+  saveTrail = () => {
+
+  }
 
   render() {
     return (
@@ -78,6 +81,7 @@ class Landing extends Component {
               name={trails.name}
               image={trails.imgSmallMed}
               location={trails.location}
+              onClick={this.saveTrail}
             />
           ))}
         </Wrapper>
