@@ -10,7 +10,7 @@ let userSchema = new Schema({
   username: {
     type: String,
     trim: true,
-    required: [true, "Username is Required"]
+    required: true
   },
   // `password` must be of type String
   // `password` will trim leading and trailing whitespace before it's saved
@@ -19,13 +19,7 @@ let userSchema = new Schema({
   password: {
     type: String,
     trim: true,
-    required: [true, "Password is Required"],
-    validate: [
-      function(input) {
-        return input.length >= 6;
-      },
-      "Password should be longer."
-    ]
+    required: true
   },
   // `email` must be of type String
   // `email` must be unique
@@ -33,8 +27,8 @@ let userSchema = new Schema({
   // You can read more about RegEx Patterns here https://www.regexbuddy.com/regex.html
   email: {
     type: String,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    trim: true,
+    required: true
   },
   // `date` must be of type Date. The default value is the current date
   userCreated: {
