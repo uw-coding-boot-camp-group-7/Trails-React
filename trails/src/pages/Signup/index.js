@@ -32,8 +32,7 @@ class Signup extends Component {
         username: this.state.username,
         password: this.state.password,
         email: this.state.email
-      })
-      .then("../trails/build/index.html").catch(err => console.log(err));
+      }).catch(err => console.log(err));
     }
   };
 
