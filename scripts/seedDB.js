@@ -13,20 +13,38 @@ const userSeed = [
     username: "Mario",
     password: "teamCompass",
     email: "mario@email.com",
+    userPassport: [
+      {
+        type: String,
+        unique: true,
+      }
+    ],
     date: new Date(Date.now())
   },
   {
     username: "Josh",
     password: "teamCompass",
     email: "josh@email.com",
+    userPassport: [
+      {
+        type: String,
+        unique: true,
+      }
+    ],
     date: new Date(Date.now())
   },
   {
     username: "Joonwoo",
     password: "teamCompass",
     email: "joonwoo@email.com",
+    userPassport: [
+      {
+        type: String,
+        unique: true,
+      }
+    ],
     date: new Date(Date.now())
-  }
+  },
 ];
 
 db.User

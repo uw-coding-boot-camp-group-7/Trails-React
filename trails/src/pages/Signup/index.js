@@ -14,14 +14,6 @@ class Signup extends Component {
     password2: ""
   }
 
-  loadUsers = () => {
-    API.getUsers()
-      .then(res =>
-        this.setState({ users: res.data, username: "", email: "", password: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
   handleInputChange = event => {
       // Destructure the name and value properties off of event.target
       // Update the appropriate state
@@ -36,7 +28,7 @@ class Signup extends Component {
     event.preventDefault();
     if (this.state.username && this.state.password) {
       console.log('in handleFormSubmit');
-      API.saveUser({
+      API.createUser({
         username: this.state.username,
         password: this.state.password,
         email: this.state.email
