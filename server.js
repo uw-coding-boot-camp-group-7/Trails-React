@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const uristring = process.env.MONGODB_URI ||"mongodb://localhost/trails";
+process.env.IP_STACK_KEY
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true, useCreateIndex: true }));
@@ -34,7 +35,7 @@ if(process.env.NODE_ENV === 'production') {
     });
 }
 
-mongoose.connect(uristring, {useNewUrlParser: true} )
+mongoose.connect(uristring, {useNewUrlParser: true, useCreateIndex: true} )
 .then(() => {
   console.log("🗄 ==> Successfully connected to mongoDB.");
 })
@@ -45,7 +46,5 @@ mongoose.connect(uristring, {useNewUrlParser: true} )
 // Console.log that server is up and running
 app.listen(PORT, function() {
   console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-        PORT, 
-        PORT);
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });

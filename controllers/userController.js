@@ -1,41 +1,47 @@
 const db = require('../models');
 
-// Defining methods for the booksController
+// Defining methods for the usersController
 module.exports = {
+    //Returns all user records available
     findAll: function(req, res) {
-      // res.send("You are connected to the backend!");
       db.User
         .find(req.query)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    //TODO: complete logic to return user queried by ID -> Joonwoo
+    //Returns user with the given id
     findById: function(req, res) {
       db.User
         .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+    //Creates a new user in the db
     create: function(req, res) {
       db.User
         .create(req.body)
-        .then(dbModel => res.json(dbModel))
+        .then(res.redirect(307, "/"))
         .catch(err => res.status(422).json(err));
     },
+    //Adds a new hike to the user's passport array
     update: function(req, res) {
+
+      let new_Hike = {
+        //whatever the data fields I need to add
+
+      }
+
       db.User
-        .findOneAndUpdate({ _id: req.params.id }, req.body)
+        .findOneAndUpdate({ _id: req.params.id }, {"$addToSet" : { "userPassport" : new_Hike} }) //be sure to update the req.body to the new obj -> new_Hike
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    remove: function(req, res) {
+    //Delets a hike from the user's passport array
+    remove: function(req, res) { //remove hike, be sure to update this to handle that query
       db.User
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    findByUsername: function(req, res) {
-      res.send('Finding User')
-    }
   };

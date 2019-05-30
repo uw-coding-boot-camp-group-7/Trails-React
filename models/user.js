@@ -40,7 +40,14 @@ let userSchema = new Schema({
   userCreated: {
     type: Date,
     default: Date.now
-  }
+  },
+
+  userPassport: [
+    {
+      type: String,
+      unique: true,
+    }
+  ]
 });
 
 // This creates our model from the above schema, using mongoose's model method
