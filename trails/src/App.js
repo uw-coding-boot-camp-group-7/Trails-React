@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Passport from './pages/Passport';
 import TrailsInfo from './pages/TrailsInfo';
 
 class App extends Component {
