@@ -14,7 +14,7 @@ function TrailCard(props) {
         <img className="trail-img"  alt={props.name} src={props.image} />
         <div className="overlay center">
           <div className="content">{props.name}<p className="sub-content">{props.location}</p></div>
-            <button className="add" onClick={props.onClick}>+</button>
+            {/* <button className="add" onClick={props.onClick}>+</button> */}
         </div>
       </div>
   );
