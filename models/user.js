@@ -38,7 +38,6 @@ let userSchema = new Schema({
   userPassport: [
     {
       type: String,
-      unique: true,
     }
   ]
 });
