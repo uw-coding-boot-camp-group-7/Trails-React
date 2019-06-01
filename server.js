@@ -7,18 +7,12 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const app = express();
 const PORT = process.env.PORT || 3001;
-//const uristring = process.env.MONGODB_URI ||"mongodb://localhost/trails";
+const uristring = process.env.MONGODB_URI ||"mongodb://localhost/trails";
 let apiKey = process.env.IP_STACK_KEY; //declared but not used
 
 // Bodyparser middleware
-app.use(
-    bodyParser.urlencoded({
-      extended: false
-    })
-  );
-  app.use(bodyParser.json());
-  // DB Config
-  const db = require("./config/keys").mongoURI;
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true, useCreateIndex: true }));
@@ -54,11 +48,7 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 // Connect to MongoDB
-mongoose
-.connect(
-    db,
-    { useNewUrlParser: true }
-)
+mongoose.connect(uristring, { useNewUrlParser: true })
 .then(() => {
     console.log("🗄 ==> Successfully connected to mongoDB.");
 })
@@ -69,7 +59,5 @@ mongoose
 // Console.log that server is up and running
 app.listen(PORT, function() {
   console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-        PORT, 
-        PORT);
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });
