@@ -20,7 +20,7 @@ module.exports = {
     create: function(req, res) {
       db.User
         .create(req.body)
-        .then(res.redirect(307, "/"))
+        .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     //Adds a new hike to the user's passport array
