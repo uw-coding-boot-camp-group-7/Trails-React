@@ -63,6 +63,40 @@
   /* vignette style: , inset 0 0 100px #333 */
 }
 
-.add {
-  clear: both;
+.neutral {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-a-trail {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  color: #fff;
+  font-size: 13px;
+  opacity: 0.6;
+  transition: .5s;
+
+}
+
+.add-a-trail:hover {
+  opacity: 1;
+  color: white;
+}
+
+.info-req {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
 }

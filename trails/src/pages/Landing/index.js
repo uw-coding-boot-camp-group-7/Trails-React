@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom'
 import SlideHeader from "../../components/SlideHeader";
 import Wrapper from "../../components/Wrapper";
 import TrailCard from "../../components/TrailCard";
@@ -9,10 +10,13 @@ import Searchbar from "../../components/Searchbar";
 class Landing extends Component {
 
   state = {
+    redirect: false,
     search: "",
     longitude: -122.3321,
     lattitude: 47.6062,
-    trails: []
+    trails: [],
+    city: "Seattle",
+    state: "WA"
   }
 
   componentDidMount() {
@@ -35,7 +39,9 @@ class Landing extends Component {
           this.setState({
             longitude: json.results[0].geometry.location.lng,
             lattitude: json.results[0].geometry.location.lat,
-            search: ""
+            search: "",
+            city: json.results[0].address_components[0].long_name,
+            state: json.results[0].address_components[2].short_name
           });
           this.loadTrails();
         });
@@ -53,13 +59,23 @@ class Landing extends Component {
     });
   };
 
-  saveTrail = () => {
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
 
+  renderRedirect = () => {
+    console.log("renderRedirect initiating");
+    if (this.state.redirect) {
+      return <Redirect to='/passport' />
+    }
   }
 
   render() {
     return (
       <React.Fragment>
+        {this.renderRedirect()}
         <SlideHeader>
           <Nav>
             <li><a href="/passport">Passport</a></li>  
@@ -73,6 +89,9 @@ class Landing extends Component {
             onKeyPress={this.handleSearchSubmit} 
           />
         </SlideHeader>
+        <div className="custom-title center">
+          <h1>{this.state.city}, {this.state.state}</h1>
+        </div>
         <Wrapper>
           {this.state.trails.map(trails => (
             <TrailCard
@@ -81,8 +100,10 @@ class Landing extends Component {
               name={trails.name}
               image={trails.imgSmallMed}
               location={trails.location}
-              onClick={this.saveTrail}
-            />
+              onClick={this.setRedirect}
+              > 
+              <button className="add-a-trail neutral" onClick={this.setRedirect}>Save this trail +</button>
+            </TrailCard>
           ))}
         </Wrapper>
         <Footer />

@@ -23,7 +23,9 @@ function Parallax() {
 
             <div className="hero-back">
                 <img id="front" alt="hero-front" src={require("../../images/hero-front.png")} />    
-                <Nav />
+                <Nav>
+                    <li><a href="/">Back to Search</a></li>  
+                </Nav>
                 {/* <div className="title center"></div>/ */}
             </div>
         </div>
