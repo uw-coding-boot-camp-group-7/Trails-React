@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import Parallax from "../../components/Parallax";
 import { Input, FormBtn } from '../../components/Forms';
@@ -7,6 +8,7 @@ import "./style.css";
 class Login extends Component {
 
   state = {
+    redirect: false,
     user: [],
     email: "",
     password: "",
@@ -30,9 +32,26 @@ class Login extends Component {
     // } 
   };
 
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    console.log("renderRedirect initiating");
+    if (this.state.redirect) {
+      return <Redirect to={{
+        pathname: '/passport',
+        state: { email: this.state.email }
+    }} />
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
+        {this.renderRedirect()}
         <Parallax />
           <div className="console-back">
             <div className="console">
@@ -62,8 +81,9 @@ class Login extends Component {
                   >Log in
                 </FormBtn>
                 {/* Redirect to signup */}
-                <p style={{float:"right"}}>Or create an account <a href="/signup">here</a></p>
+                {/* <button onClick={this.setRedirect}>redirect test</button> */}
               </form>
+                <p style={{float:"right"}}>Or create an account <a href="/signup">here</a></p>
 
             </div>
         </div>

@@ -56,56 +56,58 @@ class Signup extends Component {
         <React.Fragment>
           { this.renderRedirect() }
           <Parallax />
-            <Wrapper>
-              <form id="signup-frm">
-                  <div className="form-group">
-                      <input  
-                      value= {this.state.username}
-                      onChange= {this.handleInputChange}
-                      name="username"
-                      type="username" 
-                      className="form-control" 
-                      id="username-input" 
-                      placeholder="Username" 
-                      />
-                  </div>
-                  <div className="form-group">
-                      <input  
-                      value= {this.state.email}
-                      onChange= {this.handleInputChange}
-                      name="email"
-                      type="email" 
-                      className="form-control" 
-                      id="email-input" 
-                      placeholder="Email" 
-                      />
-                  </div>
-                  <div className="form-group">
-                      <input 
-                      value= {this.state.password}
-                      onChange= {this.handleInputChange}
-                      name="password"
-                      type="password" 
-                      className="form-control" 
-                      id="password-input" 
-                      placeholder="Password" 
-                      />
-                  </div>
-                  <div className="form-group">
-                      <input 
-                      value= {this.state.password2}
-                      onChange= {this.handleInputChange}
-                      name="password2"
-                      type="password" 
-                      className="form-control" 
-                      id="confirm-input" 
-                      placeholder="Confirm your password" 
-                      />
-                  </div>
-                  <button onClick={this.handleFormSubmit} type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
-              </form>
-            </Wrapper>
-          <Footer />
+            <div className="console-back">
+              <div className="console">
+                <form id="signup-frm">
+                    <div className="form-group">
+                        <input  
+                        value= {this.state.username}
+                        onChange= {this.handleInputChange}
+                        name="username"
+                        type="username" 
+                        className="form-control" 
+                        id="username-input" 
+                        placeholder="Username" 
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input  
+                        value= {this.state.email}
+                        onChange= {this.handleInputChange}
+                        name="email"
+                        type="email" 
+                        className="form-control" 
+                        id="email-input" 
+                        placeholder="Email" 
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input 
+                        value= {this.state.password}
+                        onChange= {this.handleInputChange}
+                        name="password"
+                        type="password" 
+                        className="form-control" 
+                        id="password-input" 
+                        placeholder="Password" 
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input 
+                        value= {this.state.password2}
+                        onChange= {this.handleInputChange}
+                        name="password2"
+                        type="password" 
+                        className="form-control" 
+                        id="confirm-input" 
+                        placeholder="Confirm your password" 
+                        />
+                    </div>
+                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-default custom-btn" id="signup">Sign up</button>
+                </form>
+              </div>
+            </div>
+          {/* <Footer /> */}
         </React.Fragment>
       );
     }
